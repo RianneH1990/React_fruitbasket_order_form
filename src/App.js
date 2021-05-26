@@ -1,11 +1,12 @@
-import React from 'react';
+
 import './App.css';
 import FruitCounter from "./FruitCounter";
+import { useState } from 'react';
 
 
 
 function App() {
-
+    
   return (
     <>
       <h1>Fruitmand bezorgservice</h1>
@@ -15,7 +16,7 @@ function App() {
       picture={"🍓"}
       />
       <FruitCounter
-          name={"Banaan"}
+          name={"Bananen"}
           picture={"🍌"}
       />
       <FruitCounter
@@ -27,6 +28,9 @@ function App() {
           picture={"🥝"}
       />
       </div>
+        <div>
+        <button className={"resetButton"} onClick={() =>  window.location.reload(true)}>Reset</button>
+        </div>
     </>
   )}
 

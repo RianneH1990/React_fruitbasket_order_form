@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ResetButton from "./ResetButton";
+
 
 
 function FruitCounter({ name, picture, button }) {
@@ -15,11 +15,6 @@ function FruitCounter({ name, picture, button }) {
         <button onClick={() => setFruitAmount(fruitAmount - 1)}>-</button>
     </div>
         </div>
-
-        <ResetButton
-        fruitAmount={fruitAmount}
-        setFruitAmount={setFruitAmount}
-        />
         </>
     )
 }
