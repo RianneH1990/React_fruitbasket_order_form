@@ -1,0 +1,23 @@
+h1 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+.fruitCount {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    margin: 20px 1750px 20px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding-top: 20px;
+}
+
+.fruitCountButton {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+}
