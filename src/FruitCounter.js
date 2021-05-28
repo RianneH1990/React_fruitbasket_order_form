@@ -1,22 +1,18 @@
 import { useState } from 'react';
 
-
-
-function FruitCounter({ name, picture, button }) {
-    const [fruitAmount, setFruitAmount] = useState(0);
+function FruitCounter(props) {
 
     return (
     <>
         <div className={"fruitCount"}>
-        {picture} {name}
+        {props.picture} {props.name}
         <div  className={"fruitCountButton"}>
-            <button onClick={() => setFruitAmount(fruitAmount + 1)}>+</button>
-        {fruitAmount}
-        <button onClick={() => setFruitAmount(fruitAmount - 1)}>-</button>
+            <button onClick={() => props.set(props.get + 1)}>+</button>
+        {props.get}
+        <button onClick={() => props.set(props.get - 1)}>-</button>
     </div>
         </div>
         </>
-    )
-}
+    )}
 
 export default FruitCounter;

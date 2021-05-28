@@ -1,11 +1,23 @@
 import { useForm } from "react-hook-form";
 import './App.css';
 import FruitCounter from "./FruitCounter";
+import {useState} from "react";
 
 
 function App() {
+    const [strawberryCount, setStrawberryCount] = useState(0);
+    const [bananaCount, setBananaCount] = useState(0);
+    const [appleCount, setAppleCount] = useState(0);
+    const [kiwiCount, setKiwiCount] = useState(0);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const selectedFreq = watch("deliverFreq");
+
+    function resetCounter() {
+        setKiwiCount(0)
+        setAppleCount(0)
+        setBananaCount(0)
+        setStrawberryCount(0)
+    }
 
     function logOutput(data){
         console.log("Data uit form: ", data);
@@ -18,22 +30,30 @@ function App() {
         <FruitCounter
       name={"Aardbeien"}
       picture={"🍓"}
+      get={strawberryCount}
+      set={setStrawberryCount}
       />
       <FruitCounter
           name={"Bananen"}
           picture={"🍌"}
+          get={bananaCount}
+          set={setBananaCount}
       />
       <FruitCounter
           name={"Appels"}
           picture={"🍎"}
+          get={appleCount}
+          set={setAppleCount}
       />
       <FruitCounter
           name={"Kiwi"}
           picture={"🥝"}
+          get={kiwiCount}
+          set={setKiwiCount}
       />
       </div>
         <div>
-        <button className={"resetButton"} onClick={() =>  window.location.reload(true)}>Reset</button>
+            <button className={"resetButton"} onClick={resetCounter}>Reset</button>
         </div>
         <form onSubmit={handleSubmit(logOutput)}>
             <label className="labelForm" htmlFor="firstName">Voornaam</label>
